@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row mt-1">
+    <div class="col-12">
+    <img src="{{cat.image.url}}"  height="500px"  width="100%"></div>
+</div>
+
+<div class="row mt-3 px-3"  style="margin-bottom:100px">
+    <div class="col-12">
+        <h3 class="text-center fw-bold text-success mt-5 mb-5">Our Collections</h3>
+        <p class="text-danger fs-5" style="text-align:justify;line-height:2">Attractive and unique ecommerce website design has always played a key role in a successful online sales and marketing strategy. In fact, studies have shown that it takes 50 milliseconds for visitors to decide if they’ll stay on an ecommerce site or not. You get only an instant to impress users, which is why website design is so important for your ecommerce business.Whether you’re about to create your first online store or you’re thinking about redesigning your current site, this guide is for you. Browse examples of great ecommerce websites, tips for choosing the right ecommerce platform, and advice to get your online business looking its best. </p>
+
+
+    </div>
+
+</div>
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        {% for i in product %}
+        <div class="col-sm-4">
+            <div class="card mx-auto border border-3 border-danger" style="width: 20rem;">
+  <img src="{{i.image.url}}"  height="200px" width="100%" class="card-img-top" alt="...">
+  <div class="card-body text-center">
+    <h5 class="card-title">{{i.name}}</h5>
+      <h5 class="card-title">{{i.price}}</h5>
+    <a href="{% url 'shop:productdetails' i.id %}" class="btn btn-secondary px-5  mb-2 fs-5">Details</a>
+
+  </div>
+</div>
+        </div>
+
+
+        {% endfor %}
+
+
+
+
+</div>
+</div>
+
+
+
+{% endblock %}

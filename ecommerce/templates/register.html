@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2 class="text-center text-info mt-3">User Register</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+  <label class="form-label">Username</label>
+  <input type="text" class="form-control" name="u" placeholder="enter the Username">
+</div>
+
+    <div class="mb-3">
+  <label class="form-label">Password</label>
+  <input type="password" class="form-control" name="p" placeholder="enter the Password">
+</div>
+
+        <div class="mb-3">
+  <label class="form-label">Confirm Password</label>
+  <input type="password" class="form-control" name="cp" placeholder="enter the Password">
+</div>
+<div class="mb-3">
+  <label class="form-label">First Name</label>
+  <input type="text" class="form-control" name="f" placeholder="enter the First Name">
+</div>
+    <div class="mb-3">
+  <label class="form-label">Last Name</label>
+  <input type="text" class="form-control" name="l" placeholder="enter the Last Name">
+</div>
+    <div class="mb-3">
+  <label class="form-label">Address</label>
+  <input type="text" class="form-control" name="ad" placeholder="enter the address">
+</div>
+
+      <div class="mb-3">
+  <label class="form-label">Phone Number</label>
+  <input type="text" class="form-control" name="ph" placeholder="enter the phno">
+</div>
+
+    <div class="mb-3">
+  <label class="form-label">Email</label>
+  <input type="email" class="form-control" name="e" placeholder="enter the Email">
+</div>
+
+   <div class="mb-3">
+  <input type="submit" class="form-control">
+</div>
+
+</form>
+{% endblock %}

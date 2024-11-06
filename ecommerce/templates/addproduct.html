@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2 class="text-center text-info mt-3">Add Products Details</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+  <label class="form-label">Name</label>
+  <input type="text" class="form-control" name="n" placeholder="enter the product name">
+</div>
+
+    <div class="mb-3">
+  <label class="form-label">Image</label>
+  <input type="file" class="form-control" name="i">
+</div>
+
+        <div class="mb-3">
+  <label class="form-label">Description</label>
+            <textarea class="form-label" name="d" >write category description</textarea>
+</div>
+ <div class="mb-3">
+  <label class="form-label">Stock</label>
+  <input type="number" class="form-control" name="s" placeholder="enter stock">
+</div>
+     <div class="mb-3">
+  <label class="form-label">Price</label>
+  <input type="number" class="form-control" name="p" placeholder="enter price">
+</div>
+     <div class="mb-3">
+  <label class="form-label">Category</label>
+  <select name="c" id="category" class="form-select">
+      <option value="">select category</option>
+      {% for i in links %}
+      <option value="{{i.name}}">{{i.name}}</option>
+      {% endfor %}
+  </select>
+</div>
+
+
+   <div class="mb-3">
+  <input type="submit" class="form-control">
+</div>
+
+</form>
+{% endblock %}
